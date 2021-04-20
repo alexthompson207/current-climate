@@ -18,7 +18,7 @@ const NewsView = ({ stories }) => {
   })
 
   return (
-    <section>
+    <section className='news-view'>
       {storyCards}
     </section>
   )

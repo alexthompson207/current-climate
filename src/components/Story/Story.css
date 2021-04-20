@@ -1,0 +1,15 @@
+.story-card {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+}
+
+.story-img {
+  width: 30%;
+}
+
+.story-text-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
