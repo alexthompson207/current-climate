@@ -31,7 +31,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <NewsView />
+        <NewsView stories={this.state.stories} />
       </div>
     );
   }
