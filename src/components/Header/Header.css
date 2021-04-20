@@ -1,0 +1,19 @@
+.nav-box {
+  display: flex;
+  justify-content: space-between;
+  /* margin: 10px 30px; */
+  background-color: gray;
+  padding: 10px 30px;
+}
+
+.nav-text-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  
+}
+
+.nav-logo {
+  width: 100px;
+}
