@@ -4,11 +4,12 @@ import Story from '../Story/Story';
 
 const NewsView = ({ stories }) => {
 
-  const storyCards = stories.map(story => {
+  const storyCards = stories.map((story, i) => {
     return (
       <Story
+        key={i}
         title={story.title}
-        summary={story.abstract}
+        // summary={story.abstract}
         author={story.byline}
         image={story.multimedia[0].url}
         altText={story.multimedia[0].caption}
