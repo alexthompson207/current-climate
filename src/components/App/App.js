@@ -48,6 +48,12 @@ class App extends Component {
     }
   }
 
+  componentDidMount() {
+    fetch('https://api.nytimes.com/svc/topstories/v2/climate.json?api-key=b3M1MC9DPZ6AYoCBVQ98cGQZYXRjwuoZ')
+      .then(response => response.json())
+      .then(stories => this.setState({ stories: stories.results }))
+  }
+
   render() {
     return (
       <div className="App">
