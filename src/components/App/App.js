@@ -1,6 +1,7 @@
 import './App.css';
 import React, { Component } from 'react';
 import NewsView from '../NewsView/NewsView';
+import Header from '../Header/Header';
 
 class App extends Component {
   constructor() {
@@ -50,6 +51,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Header />
         <NewsView stories={this.state.stories} />
       </div>
     );
