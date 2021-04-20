@@ -1,0 +1,26 @@
+.story-card {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  margin: 15px 0;
+  border-bottom: 5px solid;
+  padding-bottom: 13px;
+}
+
+.story-card:hover {
+  cursor: pointer;
+}
+
+.story-img {
+  width: 30%;
+}
+
+.story-text-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.story-title:hover {
+  text-decoration: underline;
+}
