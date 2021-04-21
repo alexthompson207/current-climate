@@ -13,10 +13,8 @@ const cleanStoriesData = (stories) => {
       publishedDate: story.published_date,
       overview: story.abstract,
       link: story.url,
-      bigPhoto: story.multimedia[0].url,
-      bigPhotoAlt: story.multimedia[0].caption,
-      smallPhoto: story.multimedia[1].url,
-      smallPhotoAlt: story.multimedia[0].caption
+      photo: story.multimedia[0].url,
+      photoAlt: story.multimedia[0].caption,
     }
   })
 }
@@ -46,7 +44,7 @@ class App extends Component {
       <div className="App">
         <Header />
         {!this.state.stories.length && <h2>Loading...</h2>}
-        {/* <NewsView stories={this.state.stories} /> */}
+        <NewsView stories={this.state.stories} />
       </div>
     );
   }
