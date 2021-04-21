@@ -3,26 +3,50 @@ import React, { Component } from 'react';
 import NewsView from '../NewsView/NewsView';
 import Header from '../Header/Header';
 
+
+
+const cleanStoriesData = (stories) => {
+  return stories.results.map(story => {
+    return {
+      title: story.title,
+      author: story.byline,
+      publishedDate: story.published_date,
+      overview: story.abstract,
+      link: story.url,
+      bigPhoto: story.multimedia[0].url,
+      bigPhotoAlt: story.multimedia[0].caption,
+      smallPhoto: story.multimedia[1].url,
+      smallPhotoAlt: story.multimedia[0].caption
+    }
+  })
+}
+
 class App extends Component {
   constructor() {
     super()
     this.state = {
-      stories: []
+      stories: [],
+      storiesError: ''
     }
   }
 
   componentDidMount() {
     fetch('https://api.nytimes.com/svc/topstories/v2/climate.json?api-key=b3M1MC9DPZ6AYoCBVQ98cGQZYXRjwuoZ')
       .then(response => response.json())
-      .then(stories => this.setState({ stories: stories.results }))
+      .then(stories => {
+        console.log(stories.results)
+        this.setState({ stories: cleanStoriesData(stories) })
+      })
   }
+
+
 
   render() {
     return (
       <div className="App">
         <Header />
         {!this.state.stories.length && <h2>Loading...</h2>}
-        <NewsView stories={this.state.stories} />
+        {/* <NewsView stories={this.state.stories} /> */}
       </div>
     );
   }
