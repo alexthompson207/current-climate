@@ -7,6 +7,7 @@ const NewsView = ({ stories }) => {
   const storyCards = stories.map((story) => {
     return (
       <Story
+        id={story.id}
         key={story.id}
         title={story.title}
         author={story.author}
