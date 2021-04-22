@@ -1,27 +1,28 @@
 import './App.css';
 import { getAllStories } from '../../apiCalls';
+import { cleanStoriesData } from '../../utilities';
 import React, { Component } from 'react';
 import NewsView from '../NewsView/NewsView';
 import Header from '../Header/Header';
 
-const generateId = (index) => {
-  return index + new Date().getTime();
-}
+// const generateId = (index) => {
+//   return index + new Date().getTime();
+// }
 
-const cleanStoriesData = (stories) => {
-  return stories.results.map((story, i) => {
-    return {
-      id: generateId(i),
-      title: story.title,
-      author: story.byline,
-      publishedDate: story.published_date,
-      overview: story.abstract,
-      link: story.url,
-      photo: story.multimedia[0].url,
-      photoAlt: story.multimedia[0].caption,
-    }
-  })
-}
+// const cleanStoriesData = (stories) => {
+//   return stories.results.map((story, i) => {
+//     return {
+//       id: generateId(i),
+//       title: story.title,
+//       author: story.byline,
+//       publishedDate: story.published_date,
+//       overview: story.abstract,
+//       link: story.url,
+//       photo: story.multimedia[0].url,
+//       photoAlt: story.multimedia[0].caption,
+//     }
+//   })
+// }
 
 class App extends Component {
   constructor() {
@@ -33,8 +34,6 @@ class App extends Component {
   }
 
   componentDidMount() {
-    // fetch('https://api.nytimes.com/svc/topstories/v2/climate.json?api-key=b3M1MC9DPZ6AYoCBVQ98cGQZYXRjwuoZ')
-    //   .then(response => response.json())
     getAllStories()
       .then(stories => this.setState({ stories: cleanStoriesData(stories), storiesError: '' }))
       .catch(err => this.setState({ storiesError: 'Oops, something went wrong' }))
