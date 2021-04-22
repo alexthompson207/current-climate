@@ -10,6 +10,10 @@ class SearchBar extends Component {
     }
   }
 
+  handleSearch = (event) => {
+    this.setState({ searchTerm: event.target.value })
+  }
+
   render() {
     return (
       <form>
@@ -18,6 +22,7 @@ class SearchBar extends Component {
           name='search'
           aria-label='Search Articles by Title'
           value={this.state.searchTerm}
+          onChange={event => handleSearch(event)}
         />
       </form>
     )
