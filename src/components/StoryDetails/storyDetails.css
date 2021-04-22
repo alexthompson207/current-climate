@@ -21,6 +21,8 @@
 .details-overview {
   margin-bottom: 10px;
   font-size: 20px;
+  width: 75%;
+  align-self: center;
 }
 
 .details-link {
