@@ -13,6 +13,7 @@ class App extends Component {
     super()
     this.state = {
       stories: [],
+      filteredStories: [],
       storiesError: ''
     }
   }
@@ -25,7 +26,7 @@ class App extends Component {
 
   searchStories = (event) => {
     const search = event.target.value;
-    const searchStories = this.state.stories.filter(story => story.title.toLowerCase().includes(value.toLowerCase()));
+    const searchStories = this.state.stories.filter(story => story.title.toLowerCase().includes(search.toLowerCase()));
     this.setState({ stories: searchStories })
   }
 
@@ -40,7 +41,7 @@ class App extends Component {
               return (
                 <>
                   {!this.state.stories.length && !this.state.storiesError && <h2>Loading...</h2>}
-                  <SearchBar />
+                  <SearchBar search={this.searchStories} />
                   <NewsView stories={this.state.stories} />
                 </>
               )

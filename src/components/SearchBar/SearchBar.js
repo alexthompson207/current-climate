@@ -2,14 +2,15 @@ import './searchBar.css';
 import React, { Component } from 'react';
 
 class SearchBar extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       searchTerm: ''
     }
   }
 
   handleSearch = (event) => {
+    this.props.search(event);
     this.setState({ searchTerm: event.target.value })
   }
 
