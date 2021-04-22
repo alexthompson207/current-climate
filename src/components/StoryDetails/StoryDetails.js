@@ -11,7 +11,7 @@ const StoryDetails = ({ currentStory }) => {
       <h1 className='details-title'>{title}</h1>
       <p className='details-author'>{author}</p>
       <h2 className='details-overview'>{overview}</h2>
-      <h3 className='details-link'>{link}</h3>
+      <a href={link} className='details-link' target='_blank'>View the Article on the NYT</a>
     </section>
   )
 }
