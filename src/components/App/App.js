@@ -28,24 +28,28 @@ class App extends Component {
         <Header />
         <main>
           {this.state.storiesError && <h2>{this.state.storiesError}</h2>}
-          <Route exact path='/' render={() => {
-            return (
-              <>
-                {!this.state.stories.length && !this.state.storiesError && <h2>Loading...</h2>}
-                <NewsView stories={this.state.stories} />
-              </>
-            )
-          }}
-          />
-          <Route exact path='/:publishedDate' render={({ match }) => {
-            const foundStory = this.state.stories.find(story => story.publishedDate === match.params.publishedDate);
-            return (
-              <>
-                {foundStory && <StoryDetails currentStory={foundStory} />}
-              </>
-            )
-          }}
-          />
+          <Switch>
+            <Route exact path='/' render={() => {
+              return (
+                <>
+                  {!this.state.stories.length && !this.state.storiesError && <h2>Loading...</h2>}
+                  <NewsView stories={this.state.stories} />
+                </>
+              )
+            }}
+            />
+            <Route exact path='/:publishedDate' render={({ match }) => {
+              const foundStory = this.state.stories.find(story => story.publishedDate === match.params.publishedDate);
+              return (
+                <>
+                  {!foundStory && <h2>Not a valid story</h2>}
+                  {foundStory && <StoryDetails currentStory={foundStory} />}
+                </>
+              )
+            }}
+            />
+            <Route path='*' render={() => <h2>Not a valid story</h2>} />
+          </Switch>
         </main>
       </div>
     );
