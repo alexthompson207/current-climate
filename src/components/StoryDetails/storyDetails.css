@@ -4,6 +4,16 @@
   margin: 5%;
 }
 
+.back-button {
+  display: flex;
+  margin: 10px 40px;
+  border: 2px solid blue;
+  width: 6%;
+  justify-content: center;
+  padding: 5px;
+  text-decoration: none;
+}
+
 .details-img {
   width: 50%;
   align-self: center;
