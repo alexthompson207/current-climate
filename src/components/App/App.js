@@ -37,7 +37,19 @@ class App extends Component {
             )
           }}
           />
-          {this.state.stories.length && <StoryDetails currentStory={this.state.stories[0]} />}
+          <Route exact path='/:id' render={({ match }) => {
+            const foundStory = this.state.stories.find(story => {
+              console.log(match.params.id, story.id);
+              return story.id === Number(match.params.id)
+            })
+            console.log(foundStory)
+            return (
+              <>
+                {foundStory && <StoryDetails currentStory={foundStory} />}
+              </>
+            )
+          }}
+          />
         </main>
       </div>
     );
