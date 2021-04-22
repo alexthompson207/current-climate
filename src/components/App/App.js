@@ -6,6 +6,7 @@ import { Route, Switch } from 'react-router-dom';
 import NewsView from '../NewsView/NewsView';
 import Header from '../Header/Header';
 import StoryDetails from '../StoryDetails/StoryDetails';
+import SearchBar from '../SearchBar/SearchBar';
 
 class App extends Component {
   constructor() {
@@ -33,6 +34,7 @@ class App extends Component {
               return (
                 <>
                   {!this.state.stories.length && !this.state.storiesError && <h2>Loading...</h2>}
+                  <SearchBar />
                   <NewsView stories={this.state.stories} />
                 </>
               )

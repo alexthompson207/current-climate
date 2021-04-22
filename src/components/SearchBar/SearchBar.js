@@ -1,6 +1,5 @@
 import './searchBar.css';
 import React, { Component } from 'react';
-import { render } from '@testing-library/react';
 
 class SearchBar extends Component {
   constructor() {
@@ -22,7 +21,7 @@ class SearchBar extends Component {
           name='search'
           aria-label='Search Articles by Title'
           value={this.state.searchTerm}
-          onChange={event => handleSearch(event)}
+          onChange={event => this.handleSearch(event)}
         />
       </form>
     )
