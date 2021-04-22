@@ -4,6 +4,7 @@ import { cleanStoriesData } from '../../utilities';
 import React, { Component } from 'react';
 import NewsView from '../NewsView/NewsView';
 import Header from '../Header/Header';
+import StoryDetails from '../StoryDetails/StoryDetails';
 
 class App extends Component {
   constructor() {
@@ -27,6 +28,7 @@ class App extends Component {
         {this.state.storiesError && <h2>{this.state.storiesError}</h2>}
         {!this.state.stories.length && !this.state.storiesError && <h2>Loading...</h2>}
         <NewsView stories={this.state.stories} />
+        <StoryDetails currentStory={this.state.stories[0]} />
       </div>
     );
   }
