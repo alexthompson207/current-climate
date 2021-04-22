@@ -1,0 +1,32 @@
+.story-details-view {
+  display: flex;
+  flex-direction: column;
+  margin: 5%;
+}
+
+.details-img {
+  width: 50%;
+  align-self: center;
+}
+
+.details-title {
+  margin-top: 15px;
+  font-size: 30px;
+}
+
+.details-author {
+  margin: 10px;
+}
+
+.details-overview {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.details-link {
+  font-size: 20px;
+  align-self: center;
+  border: 5px solid black;
+  width: 40%;
+  padding: 5px;
+}
