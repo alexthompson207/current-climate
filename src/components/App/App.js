@@ -23,6 +23,12 @@ class App extends Component {
       .catch(err => this.setState({ storiesError: 'Oops, something went wrong' }))
   }
 
+  searchStories = (event) => {
+    const search = event.target.value;
+    const searchStories = this.state.stories.filter(story => story.title.toLowerCase().includes(value.toLowerCase()));
+    this.setState({ stories: searchStories })
+  }
+
   render() {
     return (
       <div className="App">
