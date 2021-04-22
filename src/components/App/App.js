@@ -37,12 +37,8 @@ class App extends Component {
             )
           }}
           />
-          <Route exact path='/:id' render={({ match }) => {
-            const foundStory = this.state.stories.find(story => {
-              console.log(match.params.id, story.id);
-              return story.id === Number(match.params.id)
-            })
-            console.log(foundStory)
+          <Route exact path='/:publishedDate' render={({ match }) => {
+            const foundStory = this.state.stories.find(story => story.publishedDate === match.params.publishedDate);
             return (
               <>
                 {foundStory && <StoryDetails currentStory={foundStory} />}

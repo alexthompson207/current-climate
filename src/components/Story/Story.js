@@ -2,10 +2,10 @@ import './story.css';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Story = ({ title, author, image, altText, id }) => {
+const Story = ({ title, author, image, altText, publishedDate }) => {
 
   return (
-    <Link to={`/${id}`} className='story-card'>
+    <Link to={`/${publishedDate}`} className='story-card'>
       {/* <article className='story-card'> */}
       <img className='story-img' src={image} alt={altText} />
       <div className='story-text-box'>
