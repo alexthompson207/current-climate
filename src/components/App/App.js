@@ -1,4 +1,5 @@
 import './App.css';
+import { getAllStories } from '../../apiCalls';
 import React, { Component } from 'react';
 import NewsView from '../NewsView/NewsView';
 import Header from '../Header/Header';
@@ -32,8 +33,9 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('https://api.nytimes.com/svc/topstories/v2/climate.json?api-key=b3M1MC9DPZ6AYoCBVQ98cGQZYXRjwuoZ')
-      .then(response => response.json())
+    // fetch('https://api.nytimes.com/svc/topstories/v2/climate.json?api-key=b3M1MC9DPZ6AYoCBVQ98cGQZYXRjwuoZ')
+    //   .then(response => response.json())
+    getAllStories()
       .then(stories => this.setState({ stories: cleanStoriesData(stories), storiesError: '' }))
       .catch(err => this.setState({ storiesError: 'Oops, something went wrong' }))
   }
