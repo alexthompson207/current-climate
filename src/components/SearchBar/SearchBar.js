@@ -17,6 +17,7 @@ class SearchBar extends Component {
   render() {
     return (
       <form className='search-form'>
+        <label htmlFor='search' className='search-label'>Search by Title:</label>
         <input
           className='search-input'
           type='text'
