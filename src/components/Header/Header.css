@@ -13,6 +13,10 @@
   
 }
 
+.nav-overview {
+  font-style: italic;
+}
+
 .nav-logo {
   width: 100px;
 }
