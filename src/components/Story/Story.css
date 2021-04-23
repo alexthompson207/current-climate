@@ -3,16 +3,22 @@
   justify-content: center;
   width: 90%;
   margin: 15px 0;
-  border-bottom: 5px solid;
-  padding-bottom: 13px;
+  background-color: #8080802b;
+  border-radius: 15px;
+  box-sizing: border-box;
+  padding: 20px 15px;
+  text-decoration: none;
+  color: black
 }
 
 .story-card:hover {
   cursor: pointer;
+  transform: scale(1.05);
 }
 
 .story-img {
   width: 30%;
+  border-radius: 10px;
 }
 
 .story-text-box {
@@ -20,6 +26,15 @@
   flex-direction: column;
   justify-content: space-around;
   width: 70%;
+  padding: 0px 20px;
+}
+
+.story-title {
+  font-size: 30px;
+}
+
+.story-author {
+  font-style: italic;
 }
 
 .story-title:hover {

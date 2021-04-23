@@ -6,12 +6,15 @@ import { Route, Switch } from 'react-router-dom';
 import NewsView from '../NewsView/NewsView';
 import Header from '../Header/Header';
 import StoryDetails from '../StoryDetails/StoryDetails';
+import SearchBar from '../SearchBar/SearchBar';
 
 class App extends Component {
   constructor() {
     super()
     this.state = {
       stories: [],
+      filteredStories: [],
+      searching: false,
       storiesError: ''
     }
   }
@@ -20,6 +23,16 @@ class App extends Component {
     getAllStories()
       .then(stories => this.setState({ stories: cleanStoriesData(stories), storiesError: '' }))
       .catch(err => this.setState({ storiesError: 'Oops, something went wrong' }))
+  }
+
+  searchStories = (event) => {
+    const search = event.target.value;
+    const searchStories = this.state.stories.filter(story => story.title.toLowerCase().includes(search.toLowerCase()));
+    this.setState({ filteredStories: searchStories, searching: true })
+  }
+
+  resetSearch = () => {
+    this.setState({ searching: false })
   }
 
   render() {
@@ -33,7 +46,8 @@ class App extends Component {
               return (
                 <>
                   {!this.state.stories.length && !this.state.storiesError && <h2>Loading...</h2>}
-                  <NewsView stories={this.state.stories} />
+                  <SearchBar search={this.searchStories} reset={this.resetSearch} />
+                  <NewsView stories={this.state.stories} filteredStories={this.state.filteredStories} searching={this.state.searching} />
                 </>
               )
             }}
@@ -42,7 +56,7 @@ class App extends Component {
               const foundStory = this.state.stories.find(story => story.publishedDate === match.params.publishedDate);
               return (
                 <>
-                  {!foundStory && <h2>Not a valid story</h2>}
+                  {!foundStory && <h2>Loading your article...</h2>}
                   {foundStory && <StoryDetails currentStory={foundStory} />}
                 </>
               )
