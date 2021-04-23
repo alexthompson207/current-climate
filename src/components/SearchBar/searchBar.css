@@ -1,5 +1,15 @@
+.search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: bold;
+  margin: 15px;
+}
+
 .search-input {
   margin: 20px;
-  width: 15%;
-  padding: 5px 0px;
+  width: 25%;
+  padding: 10px 0px;
+  font-size: 20px;
 }

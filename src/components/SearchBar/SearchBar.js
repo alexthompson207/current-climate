@@ -22,6 +22,7 @@ class SearchBar extends Component {
           className='search-input'
           type='text'
           name='search'
+          placeholder='Climate change'
           aria-label='Search Articles by Title'
           value={this.state.searchTerm}
           onChange={event => this.handleSearch(event)}

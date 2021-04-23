@@ -51,7 +51,7 @@ class App extends Component {
               const foundStory = this.state.stories.find(story => story.publishedDate === match.params.publishedDate);
               return (
                 <>
-                  {!foundStory && <h2>Not a valid story</h2>}
+                  {!foundStory && <h2>Loading your article...</h2>}
                   {foundStory && <StoryDetails currentStory={foundStory} />}
                 </>
               )
