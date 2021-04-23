@@ -2,12 +2,14 @@ import './newsView.css';
 import React from 'react';
 import Story from '../Story/Story';
 
-const NewsView = ({ stories, filteredStories }) => {
+const NewsView = ({ stories, filteredStories, searching }) => {
   let storiesToDisplay = [];
-  if (!filteredStories.length && stories.length) {
-    storiesToDisplay = stories;
-  } else if (filteredStories.length) {
+  if (filteredStories.length && searching) {
     storiesToDisplay = filteredStories;
+  } else if (!filteredStories.length && searching) {
+    return (<h1>No articles match your search, please try again!</h1>)
+  } else {
+    storiesToDisplay = stories;
   }
 
 
