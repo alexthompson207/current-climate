@@ -10,10 +10,10 @@ const StoryDetails = ({ currentStory }) => {
     <>
       <Link to='/' className='back-button'>Home</Link>
       <section className='story-details-view'>
-        <img className='details-img' src={photo} alt={photoAlt}></img>
         <h1 className='details-title'>{title}</h1>
-        <p className='details-author'>{author}</p>
+        <img className='details-img' src={photo} alt={photoAlt}></img>
         <h2 className='details-overview'>{overview}</h2>
+        <p className='details-author'>{author}</p>
         <a href={link} className='details-link' target='_blank'>View the Article on the NYT</a>
       </section>
     </>

@@ -7,11 +7,19 @@
 .back-button {
   display: flex;
   margin: 10px 40px;
-  border: 2px solid blue;
+  border: 2px solid #112d4e;
+  background-color: #f9f7f7;
+  color: black;
+  border-radius: 15px;
   width: 6%;
   justify-content: center;
   padding: 5px;
   text-decoration: none;
+}
+
+.back-button:hover {
+  transform: scale(1.05);
+  border-color: #3f72af;
 }
 
 .details-img {
@@ -20,7 +28,7 @@
 }
 
 .details-title {
-  margin-top: 15px;
+  margin-bottom: 15px;
   font-size: 30px;
 }
 
@@ -29,7 +37,7 @@
 }
 
 .details-overview {
-  margin-bottom: 10px;
+  margin: 10px;
   font-size: 20px;
   width: 75%;
   align-self: center;
@@ -38,7 +46,11 @@
 .details-link {
   font-size: 20px;
   align-self: center;
-  border: 5px solid black;
   width: 40%;
   padding: 5px;
+  color: #3f72af;
+}
+
+.details-link:hover {
+  transform: scale(1.1);
 }
