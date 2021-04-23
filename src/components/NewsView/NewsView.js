@@ -28,6 +28,7 @@ const NewsView = ({ stories, filteredStories, searching }) => {
 
   return (
     <section className='news-view'>
+      <h2>Number of articles ({storyCards.length})</h2>
       {storyCards}
     </section>
   )
