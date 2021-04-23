@@ -21,7 +21,10 @@ class App extends Component {
 
   componentDidMount() {
     getAllStories()
-      .then(stories => this.setState({ stories: cleanStoriesData(stories), storiesError: '' }))
+      .then(stories => {
+        console.log(stories)
+        this.setState({ stories: cleanStoriesData(stories), storiesError: '' })
+      })
       .catch(err => this.setState({ storiesError: 'Oops, something went wrong' }))
   }
 
