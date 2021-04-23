@@ -1,7 +1,7 @@
 .nav-box {
   display: flex;
   justify-content: space-between;
-  background-color: gray;
+  background-color: #dbe2ef;
   padding: 10px 30px;
 }
 
