@@ -16,8 +16,9 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <form>
+      <form className='search-form'>
         <input
+          className='search-input'
           type='text'
           name='search'
           aria-label='Search Articles by Title'
