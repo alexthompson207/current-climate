@@ -2,9 +2,16 @@ import './newsView.css';
 import React from 'react';
 import Story from '../Story/Story';
 
-const NewsView = ({ stories }) => {
+const NewsView = ({ stories, filteredStories }) => {
+  let storiesToDisplay = [];
+  if (!filteredStories.length && stories.length) {
+    storiesToDisplay = stories;
+  } else if (filteredStories.length) {
+    storiesToDisplay = filteredStories;
+  }
 
-  const storyCards = stories.map((story) => {
+
+  const storyCards = storiesToDisplay.map((story) => {
     return (
       <Story
         publishedDate={story.publishedDate}

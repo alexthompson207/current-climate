@@ -27,7 +27,7 @@ class App extends Component {
   searchStories = (event) => {
     const search = event.target.value;
     const searchStories = this.state.stories.filter(story => story.title.toLowerCase().includes(search.toLowerCase()));
-    this.setState({ stories: searchStories })
+    this.setState({ filteredStories: searchStories })
   }
 
   render() {
@@ -42,7 +42,7 @@ class App extends Component {
                 <>
                   {!this.state.stories.length && !this.state.storiesError && <h2>Loading...</h2>}
                   <SearchBar search={this.searchStories} />
-                  <NewsView stories={this.state.stories} />
+                  <NewsView stories={this.state.stories} filteredStories={this.state.filteredStories} />
                 </>
               )
             }}
