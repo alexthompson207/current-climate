@@ -23,8 +23,11 @@ class App extends Component {
   componentDidMount() {
     getAllStories()
       .then(stories => {
-        console.log(stories)
-        this.setState({ stories: cleanStoriesData(stories), error: '' })
+        if (stories.status === 'OK') {
+          this.setState({ stories: cleanStoriesData(stories), error: '' })
+        } else {
+          this.setState({ error: 'fetch error' })
+        }
       })
       .catch(err => this.setState({ error: 'fetch error' }))
   }
