@@ -1,9 +1,10 @@
-import '.favoritesView.css';
+import './favoritesView.css';
 import React from 'react';
+import Story from '../Story/Story';
 
 const FavoritesView = ({ favorites }) => {
 
-  const storyCards = storiesToDisplay.map((story) => {
+  const storyCards = favorites.map((story) => {
     return (
       <Story
         publishedDate={story.publishedDate}
@@ -18,9 +19,13 @@ const FavoritesView = ({ favorites }) => {
 
   return (
     <section className='fav-view'>
-      <h2 className='fav-results'>Number of articles: ({storyCards.length})</h2>
-      {!favorites.length && <h2>Loading...</h2>}
-      {storyCards}
+      {!favorites.length && <h2>No favorites yet!</h2>}
+      {!!favorites.length &&
+        <>
+          <h2 className='fav-results'>Number of articles: ({storyCards.length})</h2>
+          {storyCards}
+        </>
+      }
     </section>
   )
 }

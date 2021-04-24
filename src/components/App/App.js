@@ -8,6 +8,7 @@ import Header from '../Header/Header';
 import StoryDetails from '../StoryDetails/StoryDetails';
 import SearchBar from '../SearchBar/SearchBar';
 import Error from '../Error/Error';
+import FavoritesView from '../FavoritesView/FavoritesView';
 
 class App extends Component {
   constructor() {
@@ -81,7 +82,7 @@ class App extends Component {
                 )
               }}
               />
-              <Route exact path='/articles/favorites' render={(() => <NewsView stories={this.state.favorites} filteredStories={this.state.filteredStories} searching={this.state.searching} error={this.state.error} />)} />
+              <Route exact path='/articles/favorites' render={(() => <FavoritesView favorites={this.state.favorites} />)} />
               <Route path='*' render={() => <Error errorMessage='Not a valid story' />} />
             </Switch>
           </main>}
