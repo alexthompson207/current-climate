@@ -1,5 +1,6 @@
 import './favoritesView.css';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Story from '../Story/Story';
 
 const FavoritesView = ({ favorites }) => {
@@ -19,6 +20,7 @@ const FavoritesView = ({ favorites }) => {
 
   return (
     <section className='fav-view'>
+      <Link to='/' className='back-button'>Home</Link>
       {!favorites.length && <h2>No favorites yet!</h2>}
       {!!favorites.length &&
         <>
