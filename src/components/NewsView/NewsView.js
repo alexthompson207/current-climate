@@ -3,6 +3,7 @@ import React from 'react';
 import Story from '../Story/Story';
 
 const NewsView = ({ stories, filteredStories, searching, error }) => {
+
   let storiesToDisplay = [];
   if (filteredStories.length && searching) {
     storiesToDisplay = filteredStories;
