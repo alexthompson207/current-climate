@@ -44,7 +44,10 @@ class App extends Component {
   }
 
   addToFavorites = (storyData) => {
-    this.setState({ favorites: [...this.state.favorites, storyData] })
+    const favorite = this.state.favorites.find(story => story.title === storyData.title)
+    if (!favorite) {
+      this.setState({ favorites: [...this.state.favorites, storyData] })
+    }
   }
 
   render() {
