@@ -45,32 +45,34 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+
         <Header />
-        <main>
-          {this.state.error && <Error errorMessage='Oops, something went wrong' />}
-          <Switch>
-            <Route exact path='/' render={() => {
-              return (
-                <>
-                  <SearchBar search={this.searchStories} reset={this.resetSearch} />
-                  <NewsView stories={this.state.stories} filteredStories={this.state.filteredStories} searching={this.state.searching} error={this.state.error} />
-                </>
-              )
-            }}
-            />
-            <Route exact path='/:publishedDate' render={({ match }) => {
-              const foundStory = this.state.stories.find(story => story.publishedDate === match.params.publishedDate);
-              return (
-                <>
-                  {!foundStory && <h1>Loading...</h1>}
-                  {foundStory && <StoryDetails currentStory={foundStory} error={this.state.error} />}
-                </>
-              )
-            }}
-            />
-            <Route path='*' render={() => <Error errorMessage='Not a valid story' />} />
-          </Switch>
-        </main>
+        {this.state.error && <Error errorMessage='Oops, something went wrong' />}
+        {!this.state.error &&
+          <main>
+            <Switch>
+              <Route exact path='/' render={() => {
+                return (
+                  <>
+                    <SearchBar search={this.searchStories} reset={this.resetSearch} />
+                    <NewsView stories={this.state.stories} filteredStories={this.state.filteredStories} searching={this.state.searching} error={this.state.error} />
+                  </>
+                )
+              }}
+              />
+              <Route exact path='/:publishedDate' render={({ match }) => {
+                const foundStory = this.state.stories.find(story => story.publishedDate === match.params.publishedDate);
+                return (
+                  <>
+                    {!foundStory && <h1>Loading...</h1>}
+                    {foundStory && <StoryDetails currentStory={foundStory} error={this.state.error} />}
+                  </>
+                )
+              }}
+              />
+              <Route path='*' render={() => <Error errorMessage='Not a valid story' />} />
+            </Switch>
+          </main>}
       </div>
     );
   }

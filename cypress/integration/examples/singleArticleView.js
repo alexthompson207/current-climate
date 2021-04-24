@@ -56,3 +56,18 @@ describe('Single Article View Features', () => {
     cy.get('.news-view a').should('have.length', 3);
   });
 })
+
+describe.only('Home View Server-Side Error', () => {
+
+  beforeEach(() => {
+    cy.intercept('GET', 'https://api.nytimes.com/svc/topstories/v2/climate.json?api-key=b3M1MC9DPZ6AYoCBVQ98cGQZYXRjwuoZ', {
+      statusCode: 500
+    })
+
+    cy.visit('http://localhost:3000/2021-04-23T17:56:13-04:00');
+  });
+
+  it('should display an error message when the server is down', () => {
+    cy.get('.error-view').contains('Oops, something went wrong')
+  });
+})
