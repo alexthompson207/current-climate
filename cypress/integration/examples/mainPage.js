@@ -133,7 +133,7 @@ describe('Home View Server-Side Error', () => {
     cy.visit('http://localhost:3000/');
   });
 
-  it('should display an error message when a data request is broken ', () => {
+  it('should display an error message when the server is down', () => {
     cy.get('.error-view').contains('Oops, something went wrong')
   });
 })
