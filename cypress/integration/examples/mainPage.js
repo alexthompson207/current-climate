@@ -123,11 +123,11 @@ describe('Home View Client-Side Error', () => {
   });
 })
 
-describe.only('Home View Client-Side Error', () => {
+describe('Home View Server-Side Error', () => {
 
   beforeEach(() => {
     cy.intercept('GET', 'https://api.nytimes.com/svc/topstories/v2/climate.json?api-key=b3M1MC9DPZ6AYoCBVQ98cGQZYXRjwuoZ', {
-      statusCode: 404
+      statusCode: 500
     })
 
     cy.visit('http://localhost:3000/');
