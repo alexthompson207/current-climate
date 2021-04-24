@@ -16,6 +16,7 @@ class App extends Component {
       stories: [],
       filteredStories: [],
       searching: false,
+      favorites: [],
       error: ''
     }
   }

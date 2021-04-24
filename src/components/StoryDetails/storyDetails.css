@@ -27,6 +27,17 @@
   color: #3f72af;
 }
 
+.fav-btn {
+  width: 10%;
+  background: none;
+  border: none;
+  margin-bottom: 16px;
+}
+
+.fav-icon {
+  width: 70px;
+}
+
 .details-img {
   width: 50%;
   align-self: center;
