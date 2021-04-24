@@ -7,8 +7,9 @@ describe('Home View Testing', () => {
     cy.visit('http://localhost:3000/');
   });
 
-  it('should have a title', () => {
+  it('should have a title and description', () => {
     cy.get('h1').contains('Current Climate')
+    cy.get('.nav-text-box').contains('sourcing important climate articles in an easy straightforward way')
   });
 
   it('should have a loading message before articles are displayed', () => {
@@ -34,4 +35,13 @@ describe('Home View Testing', () => {
     cy.get('.story-card').eq(1).contains('By Brad Plumer and Nadja Popovich')
     cy.get('.story-card').eq(1).children('img').should('have.class', 'story-img')
   });
+
+  it('should display to the user the number of articles of the page', () => {
+    cy.get('.news-results').contains('3');
+  });
+
+  it('should display a search bar', () => {
+    cy.get('.search-label').contains('Search by Title');
+    cy.get('input[name="search"]').should('have.class', 'search-input');
+  })
 })
