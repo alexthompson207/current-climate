@@ -70,7 +70,7 @@ class App extends Component {
                 )
               }}
               />
-              <Route exact path='/favorites' render={(() => <NewsView stories={this.state.stories} filteredStories={this.state.filteredStories} error={this.state.error} />)} />
+              <Route exact path='/articles/favorites' render={(() => <NewsView stories={this.state.stories} filteredStories={this.state.filteredStories} searching={this.state.searching} error={this.state.error} />)} />
               <Route path='*' render={() => <Error errorMessage='Not a valid story' />} />
             </Switch>
           </main>}

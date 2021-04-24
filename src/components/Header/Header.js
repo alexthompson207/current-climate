@@ -13,6 +13,9 @@ const Header = () => {
       <Link to='/'>
         <img className='nav-logo' src='/images/logo2.svg' alt='website logo' />
       </Link>
+      <Link to='/articles/favorites'>
+        <button>Favorties</button>
+      </Link>
     </header>
   )
 }
