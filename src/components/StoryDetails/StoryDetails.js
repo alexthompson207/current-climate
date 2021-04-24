@@ -1,22 +1,20 @@
 import './storyDetails.css';
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
-const StoryDetails = ({ currentStory, addFavorite }) => {
-  const [isClicked, setisClicked] = useState(false)
+const StoryDetails = ({ currentStory, addFavorite, favorites }) => {
+
   const { title, id, photo, photoAlt, publishedDate, author, overview, link } = currentStory;
 
   const handleClick = () => {
-    console.log(currentStory)
-    setisClicked(!isClicked);
+    addFavorite(currentStory)
     favoriteButton()
-    if (isClicked) {
-      addFavorite(currentStory)
-    }
   }
 
   const favoriteButton = () => {
-    if (!isClicked) {
+    const isFavorite = favorites.find(favorite => favorite.title === currentStory.title)
+
+    if (!isFavorite) {
       return '/images/heart.svg'
     } else {
       return '/images/red-heart.svg'

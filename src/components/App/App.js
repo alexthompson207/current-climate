@@ -73,7 +73,7 @@ class App extends Component {
                 return (
                   <>
                     {!foundStory && <h1>Loading...</h1>}
-                    {foundStory && <StoryDetails currentStory={foundStory} addFavorite={this.addToFavorites} />}
+                    {foundStory && <StoryDetails currentStory={foundStory} addFavorite={this.addToFavorites} favorites={this.state.favorites} />}
                   </>
                 )
               }}
