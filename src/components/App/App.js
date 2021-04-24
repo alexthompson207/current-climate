@@ -44,7 +44,7 @@ class App extends Component {
   }
 
   addToFavorites = (storyData) => {
-    this.setState({ favorites: this.state.favorites.push(storyData) })
+    this.setState({ favorites: [...this.state.favorites, storyData] })
   }
 
   render() {
@@ -70,12 +70,12 @@ class App extends Component {
                 return (
                   <>
                     {!foundStory && <h1>Loading...</h1>}
-                    {foundStory && <StoryDetails currentStory={foundStory} error={this.state.error} />}
+                    {foundStory && <StoryDetails currentStory={foundStory} addFavorite={this.addToFavorites} />}
                   </>
                 )
               }}
               />
-              <Route exact path='/articles/favorites' render={(() => <NewsView stories={this.state.stories} filteredStories={this.state.filteredStories} searching={this.state.searching} error={this.state.error} />)} />
+              <Route exact path='/articles/favorites' render={(() => <NewsView stories={this.state.favorites} filteredStories={this.state.filteredStories} searching={this.state.searching} error={this.state.error} />)} />
               <Route path='*' render={() => <Error errorMessage='Not a valid story' />} />
             </Switch>
           </main>}

@@ -2,14 +2,17 @@ import './storyDetails.css';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const StoryDetails = ({ currentStory }) => {
+const StoryDetails = ({ currentStory, addFavorite }) => {
   const [isClicked, setisClicked] = useState(false)
   const { title, id, photo, photoAlt, publishedDate, author, overview, link } = currentStory;
 
   const handleClick = () => {
-    console.log('clicked')
+    console.log(currentStory)
     setisClicked(!isClicked);
     favoriteButton()
+    if (isClicked) {
+      addFavorite(currentStory)
+    }
   }
 
   const favoriteButton = () => {
