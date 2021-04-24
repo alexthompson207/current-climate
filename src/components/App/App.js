@@ -16,7 +16,7 @@ class App extends Component {
       stories: [],
       filteredStories: [],
       searching: false,
-      storiesError: ''
+      error: ''
     }
   }
 
@@ -24,9 +24,9 @@ class App extends Component {
     getAllStories()
       .then(stories => {
         console.log(stories)
-        this.setState({ stories: cleanStoriesData(stories), storiesError: '' })
+        this.setState({ stories: cleanStoriesData(stories), error: '' })
       })
-      .catch(err => this.setState({ storiesError: 'fetch error' }))
+      .catch(err => this.setState({ error: 'fetch error' }))
   }
 
   searchStories = (event) => {
@@ -44,13 +44,13 @@ class App extends Component {
       <div className="App">
         <Header />
         <main>
-          {this.state.storiesError && <Error errorMessage='Oops, something went wrong' />}
+          {this.state.error && <Error errorMessage='Oops, something went wrong' />}
           <Switch>
             <Route exact path='/' render={() => {
               return (
                 <>
                   <SearchBar search={this.searchStories} reset={this.resetSearch} />
-                  {!this.state.stories.length && !this.state.storiesError && <h2>Loading...</h2>}
+                  {!this.state.stories.length && !this.state.error && <h2>Loading...</h2>}
                   <NewsView stories={this.state.stories} filteredStories={this.state.filteredStories} searching={this.state.searching} />
                 </>
               )
@@ -60,7 +60,7 @@ class App extends Component {
               const foundStory = this.state.stories.find(story => story.publishedDate === match.params.publishedDate);
               return (
                 <>
-                  {!foundStory && <h2>Loading your article...</h2>}
+                  {!foundStory && !this.state.error && <h2>Loading your article...</h2>}
                   {foundStory && <StoryDetails currentStory={foundStory} />}
                 </>
               )
