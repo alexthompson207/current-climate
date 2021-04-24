@@ -7,6 +7,7 @@ import NewsView from '../NewsView/NewsView';
 import Header from '../Header/Header';
 import StoryDetails from '../StoryDetails/StoryDetails';
 import SearchBar from '../SearchBar/SearchBar';
+import Error from '../Error/Error';
 
 class App extends Component {
   constructor() {
@@ -15,14 +16,20 @@ class App extends Component {
       stories: [],
       filteredStories: [],
       searching: false,
-      storiesError: ''
+      error: ''
     }
   }
 
   componentDidMount() {
     getAllStories()
-      .then(stories => this.setState({ stories: cleanStoriesData(stories), storiesError: '' }))
-      .catch(err => this.setState({ storiesError: 'Oops, something went wrong' }))
+      .then(stories => {
+        if (stories.status === 'OK') {
+          this.setState({ stories: cleanStoriesData(stories), error: '' })
+        } else {
+          this.setState({ error: 'fetch error' })
+        }
+      })
+      .catch(err => this.setState({ error: 'fetch error' }))
   }
 
   searchStories = (event) => {
@@ -40,14 +47,13 @@ class App extends Component {
       <div className="App">
         <Header />
         <main>
-          {this.state.storiesError && <h2>{this.state.storiesError}</h2>}
+          {this.state.error && <Error errorMessage='Oops, something went wrong' />}
           <Switch>
             <Route exact path='/' render={() => {
               return (
                 <>
-                  {!this.state.stories.length && !this.state.storiesError && <h2>Loading...</h2>}
                   <SearchBar search={this.searchStories} reset={this.resetSearch} />
-                  <NewsView stories={this.state.stories} filteredStories={this.state.filteredStories} searching={this.state.searching} />
+                  <NewsView stories={this.state.stories} filteredStories={this.state.filteredStories} searching={this.state.searching} error={this.state.error} />
                 </>
               )
             }}
@@ -56,13 +62,13 @@ class App extends Component {
               const foundStory = this.state.stories.find(story => story.publishedDate === match.params.publishedDate);
               return (
                 <>
-                  {!foundStory && <h2>Loading your article...</h2>}
-                  {foundStory && <StoryDetails currentStory={foundStory} />}
+                  {!foundStory && <h1>Loading...</h1>}
+                  {foundStory && <StoryDetails currentStory={foundStory} error={this.state.error} />}
                 </>
               )
             }}
             />
-            <Route path='*' render={() => <h2>Not a valid story</h2>} />
+            <Route path='*' render={() => <Error errorMessage='Not a valid story' />} />
           </Switch>
         </main>
       </div>

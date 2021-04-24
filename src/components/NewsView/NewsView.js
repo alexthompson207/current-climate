@@ -2,7 +2,8 @@ import './newsView.css';
 import React from 'react';
 import Story from '../Story/Story';
 
-const NewsView = ({ stories, filteredStories, searching }) => {
+const NewsView = ({ stories, filteredStories, searching, error }) => {
+
   let storiesToDisplay = [];
   if (filteredStories.length && searching) {
     storiesToDisplay = filteredStories;
@@ -29,6 +30,7 @@ const NewsView = ({ stories, filteredStories, searching }) => {
   return (
     <section className='news-view'>
       <h2 className='news-results'>Number of articles: ({storyCards.length})</h2>
+      {!stories.length && !error && <h2>Loading...</h2>}
       {storyCards}
     </section>
   )
