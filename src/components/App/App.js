@@ -50,18 +50,19 @@ class App extends Component {
               return (
                 <>
                   <SearchBar search={this.searchStories} reset={this.resetSearch} />
-                  {!this.state.stories.length && !this.state.error && <h2>Loading...</h2>}
-                  <NewsView stories={this.state.stories} filteredStories={this.state.filteredStories} searching={this.state.searching} />
+                  {/* {!this.state.stories.length && !this.state.error && <h2>Loading...</h2>} */}
+                  <NewsView stories={this.state.stories} filteredStories={this.state.filteredStories} searching={this.state.searching} error={this.state.error} />
                 </>
               )
             }}
             />
             <Route exact path='/:publishedDate' render={({ match }) => {
               const foundStory = this.state.stories.find(story => story.publishedDate === match.params.publishedDate);
+              console.log(foundStory)
               return (
                 <>
-                  {!foundStory && !this.state.error && <h2>Loading your article...</h2>}
-                  {foundStory && <StoryDetails currentStory={foundStory} />}
+                  {!foundStory && <Error errorMessage='Not a valid story' />}
+                  {foundStory && <StoryDetails currentStory={foundStory} error={this.state.error} />}
                 </>
               )
             }}
