@@ -1,5 +1,7 @@
 {
-  "results": [
+  "status": "OK",
+    "results":
+  [
     {
       "section": "climate",
       "subsection": "",
