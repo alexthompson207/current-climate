@@ -43,6 +43,10 @@ class App extends Component {
     this.setState({ searching: false })
   }
 
+  addToFavorites = (storyData) => {
+    this.setState({ favorites: this.state.favorites.push(storyData) })
+  }
+
   render() {
     return (
       <div className="App">
