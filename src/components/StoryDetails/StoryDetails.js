@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const StoryDetails = ({ currentStory, addFavorite, favorites }) => {
 
-  const { title, id, photo, photoAlt, publishedDate, author, overview, link } = currentStory;
+  const { title, photo, photoAlt, author, overview, link } = currentStory;
 
   const handleClick = () => {
     addFavorite(currentStory)
@@ -21,7 +21,6 @@ const StoryDetails = ({ currentStory, addFavorite, favorites }) => {
     }
   }
 
-
   return (
     <>
       <Link to='/' className='back-button'>Home</Link>
@@ -31,20 +30,10 @@ const StoryDetails = ({ currentStory, addFavorite, favorites }) => {
         <img className='details-img' src={photo} alt={photoAlt}></img>
         <h2 className='details-overview'>{overview}</h2>
         <p className='details-author'>{author}</p>
-        <a href={link} className='details-link' target='_blank'>View the Article on the NYT</a>
+        <a href={link} className='details-link' target='_blank' rel='noreferrer'>View the Article on the NYT</a>
       </section>
     </>
   )
 }
 
 export default StoryDetails;
-
-
-// author
-// id
-// link
-// overview
-// photo
-// photoAlt
-// publishedDate
-// title
