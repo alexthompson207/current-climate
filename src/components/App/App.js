@@ -8,6 +8,7 @@ import Header from '../Header/Header';
 import StoryDetails from '../StoryDetails/StoryDetails';
 import SearchBar from '../SearchBar/SearchBar';
 import Error from '../Error/Error';
+import FavoritesView from '../FavoritesView/FavoritesView';
 
 class App extends Component {
   constructor() {
@@ -16,6 +17,7 @@ class App extends Component {
       stories: [],
       filteredStories: [],
       searching: false,
+      favorites: [],
       error: ''
     }
   }
@@ -30,6 +32,9 @@ class App extends Component {
         }
       })
       .catch(err => this.setState({ error: 'fetch error' }))
+    const favorites = localStorage.getItem('favorites')
+    favorites && this.setState({ favorites: JSON.parse(favorites) })
+
   }
 
   searchStories = (event) => {
@@ -42,7 +47,20 @@ class App extends Component {
     this.setState({ searching: false })
   }
 
+  addToFavorites = (storyData) => {
+    const favorite = this.state.favorites.find(story => story.title === storyData.title);
+    if (!favorite) {
+      this.setState({ favorites: [...this.state.favorites, storyData] })
+
+    } else {
+      const removeFavorite = this.state.favorites.filter(story => story.title !== storyData.title);
+      this.setState({ favorites: removeFavorite })
+      localStorage.setItem('favorites', JSON.stringify(removeFavorite))
+    }
+  }
+
   render() {
+    this.state.favorites.length && localStorage.setItem('favorites', JSON.stringify(this.state.favorites));
     return (
       <div className="App">
 
@@ -65,11 +83,12 @@ class App extends Component {
                 return (
                   <>
                     {!foundStory && <h1>Loading...</h1>}
-                    {foundStory && <StoryDetails currentStory={foundStory} error={this.state.error} />}
+                    {foundStory && <StoryDetails currentStory={foundStory} addFavorite={this.addToFavorites} favorites={this.state.favorites} />}
                   </>
                 )
               }}
               />
+              <Route exact path='/articles/favorites' render={(() => <FavoritesView favorites={this.state.favorites} />)} />
               <Route path='*' render={() => <Error errorMessage='Not a valid story' />} />
             </Switch>
           </main>}
