@@ -21,6 +21,7 @@ const FavoritesView = ({ favorites }) => {
   return (
     <section className='fav-view'>
       <Link to='/' className='back-button'>Home</Link>
+      <h1 className='fav-title'>Your Favorite Articles</h1>
       {!favorites.length && <h2>No favorites yet!</h2>}
       {!!favorites.length &&
         <>
