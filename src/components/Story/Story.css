@@ -41,3 +41,22 @@
 .story-title:hover {
   text-decoration: underline;
 }
+
+@media only screen and (max-width: 650px) {
+  .story-card {
+    flex-direction: column;
+  }
+
+  .story-img {
+    width: 80%;
+    margin: auto;
+  }
+
+  .story-text-box {
+    width: 90%;
+    margin-top: 5px;
+    text-align: start;
+    padding: 0 15px;
+  }
+
+}
