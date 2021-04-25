@@ -1,70 +1,111 @@
-# Getting Started with Create React App
+<h1 align="left">Current Climate</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  <a href="https://planet-party.herokuapp.com/">
+    <img src="./public/images/logo.svg" alt="Cartoon image of Earth with leaves above it" width="100" height='100'>
+  </a>
+    <p align="center">
+    <br />
+    <a href="https://planet-party.herokuapp.com/"><strong>Explore the app »</strong></a>
+    <br />
+    <br />
+    </p>
+  </p>
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+* [About the Project](#about-the-project)
+* [Installation](#installation)
+* [Functionality](#functionality)
+* [Learning Goals](#learning-goals)
+* [Next Steps](#next-steps)
+* [Technologies Used](#technologies-used)
+* [Contributors](#contributors)
+* [Contact](#contact)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## About the Project
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Current Climate is a niche application designed for users who are passionate about climate change and are subscribed to the New York Times. The target audience of this application is for those people who ask for the "sports section" or the "funnies", or are easily distracted by all the other news going on in the world. Current Climate sources important climate articles for the New York Times Developer Network [(view documentation)](https://developer.nytimes.com/) in an easy, straightforward way, and eliminates other distracting news by just focusing on climate change articles. Users are able to browse and search all climate change articles, click on a specific article to learn more, and can be redirected to that article on the New York Times website. Furthermore, users are able to favorite/unfavorite an article, and their favorites section will persist on page load. The project specs and rubic are from the Turing School of Software and Design and can be seen [here](https://frontend.turing.edu/projects/module-3/niche-audience.html).
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+View the deployed site: [here](https://planet-party.herokuapp.com/)
 
-### `npm run build`
+## Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Fork this [repository](https://github.com/alexthompson207/current-climate).
+2. Clone it down to your local machine with `git clone <your SSH Key>`.
+3. Navigate into this directory with `cd current-climate`.
+4. Run `npm install` to compile the React application.
+5. Run `npm start` to see the app running locally.
+6. Run `<your text editor> .` to see the code in your text editor.
+7. Run `npm run cypress` to open Cypress and see all the tests.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Functionality
+* [All Articles View](#all-articles-view)
+* [Article Details](#article-details)
+* [Favorite Articles](#favorite-articles)
+* [Responsive Design](#responsive-design)
+* [Accessibility](#accessibility)
 
-### `npm run eject`
+#### All Articles View 
+  - When a user visits the site they should be able to see all top climate articles from the New York Times and search articles by their title. 
+<img src="https://media.giphy.com/media/IZ0Taem6JhG0VJYQQl/giphy.gif" width="1440">
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### Article Details
+  - When a user clicks on an article they should see a view with details about the article. 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<img src="https://media.giphy.com/media/zVXMeEDnLV1jW0zZ95/giphy.gif" width="1440">
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#### Favorite Articles
+  - When a user clicks on an article they should be able to add that article to their favorites, which should persist upon page load. 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<img src="https://media.giphy.com/media/zVXMeEDnLV1jW0zZ95/giphy.gif" width="1440">
 
-## Learn More
+#### Responsive Design
+ - Responsiveness was a consideration while designing this application. The application viewed from a mobile device:
+ <img src="https://media.giphy.com/media/HWFo2llXGa7uugvvx6/giphy.gif" width="500" align="center">
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### Accessibility 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Accessibility was a priority in building this application. Current Climate recieved a 100% acecessibility audit from Chrome's Lighthouse tool. Also using the Wave extension, the application has zero errors and zero contrast errors. 
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Learning Goals
 
-### Analyzing the Bundle Size
+- Deepen my understanding of React; class vs. function components, props, and Fetch requests
+- Creating a favorites view, using `localStorage`
+- Create a multi-page UX using React Router
+- Testing User Stories using `Cypress`
+- End to End Testing using `Cypress`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Next Steps
 
-### Making a Progressive Web App
+- Add additional API requests to fetch other climate articles from other news sources.
+- Create a login feature, so the application feels more personal.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+## Technologies Used
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- ![React](https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB)
+- ![ReactRouter](https://camo.githubusercontent.com/4f9d20f3a284d2f6634282f61f82a62e99ee9906537dc9859decfdc9efbb51ec/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f52656163745f526f757465722d4341343234353f7374796c653d666f722d7468652d6261646765266c6f676f3d72656163742d726f75746572266c6f676f436f6c6f723d7768697465)
+- ![JavaScript](https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+- ![HTML5](https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white)
+- ![CSS3](https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white)
+- ![Webpack](https://img.shields.io/badge/webpack%20-%238DD6F9.svg?&style=for-the-badge&logo=webpack&logoColor=black)
+- ![Cypress](https://img.shields.io/badge/cypress%20-%2317202C.svg?&style=for-the-badge&logo=cypress&logoColor=white)
 
-### Deployment
+## Contributors
+* [Alex Thompson](https://github.com/alexthompson207) - Application Creator
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+## Contact
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[<img src="https://img.shields.io/badge/LinkedIn-alex--thompson-informational?style=for-the-badge&labelColor=black&logo=linkedin&logoColor=0077b5&&color=0077b5"/>][linkedin]
+[<img src="https://img.shields.io/badge/Github-AlexThompson207-informational?style=for-the-badge&labelColor=black&logo=github&color=8B0BD5"/>][github]
+
+<!-- Personal Definitions  -->
+
+[linkedin]: https://www.linkedin.com/in/alex-thompson-he-him/
+[github]: https://github.com/alexthompson207
