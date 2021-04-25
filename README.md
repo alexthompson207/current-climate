@@ -26,7 +26,7 @@
 
 ## About the Project
 
-Current Climate is a niche application designed for users who are passionate about climate change and are subscribed to the New York Times. The target audience of this application is for those people who ask for the "sports section" or the "funnies", or are easily distracted by all the other news going on in the world. Current Climate sources important climate articles for the New York Times Developer Network [(view documentation)](https://developer.nytimes.com/) in an easy, straightforward way, and eliminates other distracting news by just focusing on climate change articles. Users are able to browse and search all climate change articles, click on a specific article to learn more, and can be redirected to that article on the New York Times website. Furthermore, users are able to favorite/unfavorite an article, and their favorites section will persist on page load. The project specs and rubic are from the Turing School of Software and Design and can be seen [here](https://frontend.turing.edu/projects/module-3/niche-audience.html).
+Current Climate is a niche application designed for users who are passionate about climate change and are subscribed to the New York Times. The target audience of this application is for those people who ask for the "sports section" or the "funnies", and are easily distracted by all the other news going on in the world. Current Climate sources important climate articles from the New York Times Developer Network [(view documentation)](https://developer.nytimes.com/) in a straightforward way, and eliminates other distracting news by just focusing on climate change articles. Users are able to browse and search all climate change articles, click on a specific article to learn more, and can be redirected to that article on the New York Times website. Furthermore, users are able to favorite/unfavorite an article, and their favorites section will persist on page load. The project specs and rubic are from the Turing School of Software and Design and can be seen [here](https://frontend.turing.edu/projects/module-3/niche-audience.html).
 
 
 View the deployed site: [here](https://planet-party.herokuapp.com/)
@@ -51,7 +51,7 @@ View the deployed site: [here](https://planet-party.herokuapp.com/)
 
 #### All Articles View 
   - When a user visits the site they should be able to see all top climate articles from the New York Times and search articles by their title. 
-<img src="https://media.giphy.com/media/IZ0Taem6JhG0VJYQQl/giphy.gif" width="1440">
+<img src="https://media.giphy.com/media/U4zGBjlbCEKRZyUwxD/giphy.gif" width="1440">
 
 #### Article Details
   - When a user clicks on an article they should see a view with details about the article. 
@@ -61,11 +61,11 @@ View the deployed site: [here](https://planet-party.herokuapp.com/)
 #### Favorite Articles
   - When a user clicks on an article they should be able to add that article to their favorites, which should persist upon page load. 
 
-<img src="https://media.giphy.com/media/zVXMeEDnLV1jW0zZ95/giphy.gif" width="1440">
+<img src="https://media.giphy.com/media/wUNm9SBrgCMtEAItJk/giphy.gif" width="1440">
 
 #### Responsive Design
  - Responsiveness was a consideration while designing this application. The application viewed from a mobile device:
- <img src="https://media.giphy.com/media/HWFo2llXGa7uugvvx6/giphy.gif" width="500" align="center">
+ <img src="https://media.giphy.com/media/agAS2KUF6ff3DYPExv/giphy.gif" width="500" align="center">
 
 #### Accessibility 
 
