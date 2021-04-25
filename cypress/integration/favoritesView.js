@@ -61,7 +61,7 @@ describe('Favorites View Features', () => {
     cy.get('h2').contains('No favorites yet!');
   });
 
-  it.only('should be able to add a favorite', () => {
+  it('should be able to add a favorite', () => {
     cy.get('.fav-results').contains('1');
     cy.get('.back-button').click();
     cy.get('.story-card').eq(1).click();
@@ -72,7 +72,7 @@ describe('Favorites View Features', () => {
   });
 })
 
-describe.only('Favorites View - No Favorites', () => {
+describe('Favorites View - No Favorites', () => {
 
   beforeEach(() => {
     cy.fixture('testStories').then(stories => {
@@ -82,7 +82,17 @@ describe.only('Favorites View - No Favorites', () => {
     cy.get('.nav-link-fav').click();
   });
 
-  it('should have a title', () => {
-    cy.get('h1').contains('Your Favorite Articles')
+  it('should have a title for the page', () => {
+    cy.url().should('eq', 'http://localhost:3000/articles/favorites');
+    cy.get('h1').contains('Your Favorite Articles');
+  });
+
+  it('should have no favorites', () => {
+    cy.get('h2').contains('No favorites yet!');
+    cy.get('.story-card').should('have.length', 0)
+  });
+
+  it('should have a home button displayed', () => {
+    cy.get('main').contains('Home').should('exist')
   });
 })
