@@ -1,4 +1,4 @@
-import './newsView.css';
+import './NewsView.css';
 import React from 'react';
 import Story from '../Story/Story';
 
