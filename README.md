@@ -51,21 +51,25 @@ View the deployed site: [here](https://planet-party.herokuapp.com/)
 
 #### All Articles View 
   - When a user visits the site they should be able to see all top climate articles from the New York Times and search articles by their title. 
-<img src="https://media.giphy.com/media/U4zGBjlbCEKRZyUwxD/giphy.gif" width="1440">
-
+<p align="center">
+  <img alt="gif all articles" src="https://media.giphy.com/media/U4zGBjlbCEKRZyUwxD/giphy.gif">
+</p>
 #### Article Details
   - When a user clicks on an article they should see a view with details about the article. 
-
-<img src="https://media.giphy.com/media/zVXMeEDnLV1jW0zZ95/giphy.gif" width="1440">
+<p align="center">
+  <img alt="gif article details" src="https://media.giphy.com/media/v4QZTTiTcmfXuLXXY9/giphy.gif">
+</p>
 
 #### Favorite Articles
   - When a user clicks on an article they should be able to add that article to their favorites, which should persist upon page load. 
-
-<img src="https://media.giphy.com/media/wUNm9SBrgCMtEAItJk/giphy.gif" width="1440">
-
+<p align="center">
+  <img alt="gif favorite articles" src="https://media.giphy.com/media/wUNm9SBrgCMtEAItJk/giphy.gif">
+</p>
 #### Responsive Design
  - Responsiveness was a consideration while designing this application. The application viewed from a mobile device:
- <img src="https://media.giphy.com/media/agAS2KUF6ff3DYPExv/giphy.gif" width="500" align="center">
+ <p align="center">
+  <img alt="gif responsive design" src="https://media.giphy.com/media/agAS2KUF6ff3DYPExv/giphy.gif">
+</p>
 
 #### Accessibility 
 
@@ -95,6 +99,7 @@ Accessibility was a priority in building this application. Current Climate recie
 - ![CSS3](https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white)
 - ![Webpack](https://img.shields.io/badge/webpack%20-%238DD6F9.svg?&style=for-the-badge&logo=webpack&logoColor=black)
 - ![Cypress](https://img.shields.io/badge/cypress%20-%2317202C.svg?&style=for-the-badge&logo=cypress&logoColor=white)
+- ![Heroku](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)
 
 ## Contributors
 * [Alex Thompson](https://github.com/alexthompson207) - Application Creator
