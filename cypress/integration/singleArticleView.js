@@ -30,7 +30,7 @@ describe('Single Article View Features', () => {
     cy.get('.story-details-view').children('a').should('have.class', 'details-link')
   });
 
-  it('should allow users to link on the link and be redirected to the NYT website in a new tab', () => {
+  it('should allow users to click on the link and be redirected to the NYT website in a new tab', () => {
     cy.get('.details-link').click();
     cy.url().should('include', 'http://localhost:3000/')
   });
