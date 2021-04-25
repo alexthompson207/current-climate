@@ -20,6 +20,10 @@ describe('Home View Features', () => {
     cy.get('main').contains('Home').should('not.exist')
   });
 
+  it('should have a favorites button displayed in the header on home view', () => {
+    cy.get('.nav-box').contains('Favorites')
+  });
+
   it('should display a section containing all the articles', () => {
     cy.get('.news-view a').should('have.length', 3)
   });
@@ -55,9 +59,18 @@ describe('Home View Features', () => {
     cy.url().should('include', '2021-04-22T06:00:01-04:00')
   });
 
-  it('should display article article title after clicking on an article', () => {
+  it('should display an article title after clicking on an article', () => {
+    cy.url().should('eq', 'http://localhost:3000/');
     cy.get('.story-card').eq(1).click()
     cy.get('h1').contains('The U.S. Has a New Climate Goal. How Does It Stack Up Globally?')
+    cy.url().should('eq', 'http://localhost:3000/2021-04-22T06:00:01-04:00');
+  });
+
+  it('should display favorites view after clicking on favorites button', () => {
+    cy.url().should('eq', 'http://localhost:3000/');
+    cy.get('.nav-link-fav').click();
+    cy.get('h1').contains('Your Favorite Articles');
+    cy.url().should('eq', 'http://localhost:3000/articles/favorites');
   });
 
 })
