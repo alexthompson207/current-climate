@@ -21,7 +21,6 @@ const StoryDetails = ({ currentStory, addFavorite, favorites }) => {
     }
   }
 
-
   return (
     <>
       <Link to='/' className='back-button'>Home</Link>
