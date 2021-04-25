@@ -49,3 +49,39 @@
   border-color: #112d4e;
   color: #3f72af;
 }
+
+@media only screen and (max-width: 780px) {
+  .nav-text-box {
+    width: 60%;
+  }
+
+  .nav-overview {
+    text-align: start;
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+  .nav-box {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .nav-text-box {
+    width: 100%;
+    align-items: center;
+  }
+
+  .nav-overview {
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  .nav-link-box {
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    align-items: center;
+  }
+}
