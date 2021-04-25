@@ -20,3 +20,8 @@
 .nav-logo {
   width: 100px;
 }
+
+.nav-link-box {
+  display: flex;
+  flex-direction: column;
+}
