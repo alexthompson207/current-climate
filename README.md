@@ -1,12 +1,12 @@
 <h1 align="left">Current Climate</h1>
 
 <p align="center">
-  <a href="https://planet-party.herokuapp.com/">
+  <a href="https://current-climate.herokuapp.com/">
     <img src="./public/images/logo.svg" alt="Cartoon image of Earth with leaves above it" width="100" height='100'>
   </a>
     <p align="center">
     <br />
-    <a href="https://planet-party.herokuapp.com/"><strong>Explore the app »</strong></a>
+    <a href="https://current-climate.herokuapp.com/"><strong>Explore the app »</strong></a>
     <br />
     <br />
     </p>
@@ -29,7 +29,7 @@
 Current Climate is a niche application designed for users who are passionate about climate change and are subscribed to the New York Times. The target audience of this application is for those people who ask for the "sports section" or the "funnies", and are easily distracted by all the other news going on in the world. Current Climate sources important climate articles from the New York Times Developer Network [(view documentation)](https://developer.nytimes.com/) in a straightforward way, and eliminates other distracting news by just focusing on climate change articles. Users are able to browse and search all climate change articles, click on a specific article to learn more, and can be redirected to that article on the New York Times website. Furthermore, users are able to favorite/unfavorite an article, and their favorites section will persist on page load. The project specs and rubic are from the Turing School of Software and Design and can be seen [here](https://frontend.turing.edu/projects/module-3/niche-audience.html).
 
 
-View the deployed site: [here](https://planet-party.herokuapp.com/)
+View the deployed site: [here](https://current-climate.herokuapp.com/)
 
 ## Installation
 
@@ -50,23 +50,29 @@ View the deployed site: [here](https://planet-party.herokuapp.com/)
 * [Accessibility](#accessibility)
 
 #### All Articles View 
-  - When a user visits the site they should be able to see all top climate articles from the New York Times and search articles by their title. 
+- When a user visits the site they should be able to see all top climate articles from the New York Times and search articles by their title. 
+
 <p align="center">
   <img alt="gif all articles" src="https://media.giphy.com/media/U4zGBjlbCEKRZyUwxD/giphy.gif">
 </p>
+
 #### Article Details
-  - When a user clicks on an article they should see a view with details about the article. 
+- When a user clicks on an article they should see a view with details about the article. 
+
 <p align="center">
   <img alt="gif article details" src="https://media.giphy.com/media/v4QZTTiTcmfXuLXXY9/giphy.gif">
 </p>
 
 #### Favorite Articles
-  - When a user clicks on an article they should be able to add that article to their favorites, which should persist upon page load. 
+- When a user clicks on an article they should be able to add that article to their favorites, which should persist upon page load. 
+
 <p align="center">
   <img alt="gif favorite articles" src="https://media.giphy.com/media/wUNm9SBrgCMtEAItJk/giphy.gif">
 </p>
+
 #### Responsive Design
- - Responsiveness was a consideration while designing this application. The application viewed from a mobile device:
+- Responsiveness was a consideration while designing this application. The application viewed from a mobile device:
+
  <p align="center">
   <img alt="gif responsive design" src="https://media.giphy.com/media/agAS2KUF6ff3DYPExv/giphy.gif">
 </p>
