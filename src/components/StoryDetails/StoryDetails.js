@@ -1,6 +1,7 @@
 import './storyDetails.css';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const StoryDetails = ({ currentStory, addFavorite, favorites }) => {
 
@@ -37,3 +38,9 @@ const StoryDetails = ({ currentStory, addFavorite, favorites }) => {
 }
 
 export default StoryDetails;
+
+StoryDetails.propTypes = {
+  currentStory: PropTypes.object.isRequired,
+  addFavorite: PropTypes.func.isRequired,
+  favorites: PropTypes.array.isRequired
+};
