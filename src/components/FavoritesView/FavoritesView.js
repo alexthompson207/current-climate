@@ -2,6 +2,7 @@ import './favoritesView.css';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Story from '../Story/Story';
+import PropTypes from 'prop-types';
 
 const FavoritesView = ({ favorites }) => {
 
@@ -34,3 +35,7 @@ const FavoritesView = ({ favorites }) => {
 }
 
 export default FavoritesView;
+
+FavoritesView.propTypes = {
+  favorites: PropTypes.array.isRequired
+};
