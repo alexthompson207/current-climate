@@ -9,6 +9,7 @@ import StoryDetails from '../StoryDetails/StoryDetails';
 import SearchBar from '../SearchBar/SearchBar';
 import Error from '../Error/Error';
 import FavoritesView from '../FavoritesView/FavoritesView';
+import Scroll from './Scroll';
 
 class App extends Component {
   constructor() {
@@ -72,6 +73,7 @@ class App extends Component {
               <Route exact path='/' render={() => {
                 return (
                   <>
+                    <Scroll />
                     <SearchBar search={this.searchStories} reset={this.resetSearch} />
                     <NewsView stories={this.state.stories} filteredStories={this.state.filteredStories} searching={this.state.searching} error={this.state.error} />
                   </>
