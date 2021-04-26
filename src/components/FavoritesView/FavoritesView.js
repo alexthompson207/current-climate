@@ -36,6 +36,19 @@ const FavoritesView = ({ favorites }) => {
 
 export default FavoritesView;
 
+const { shape, number, string, arrayOf } = PropTypes
+
+const favorite = shape({
+  author: string.isRequired,
+  id: number.isRequired,
+  link: string.isRequired,
+  overview: string.isRequired,
+  photo: string.isRequired,
+  photoAlt: string.isRequired,
+  publishedDate: string.isRequired,
+  title: string.isRequired
+})
+
 FavoritesView.propTypes = {
-  favorites: PropTypes.array.isRequired
+  favorites: arrayOf(favorite).isRequired
 };
