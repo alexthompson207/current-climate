@@ -39,8 +39,22 @@ const StoryDetails = ({ currentStory, addFavorite, favorites }) => {
 
 export default StoryDetails;
 
+const { shape, number, string, arrayOf } = PropTypes
+
+const article = shape({
+  author: string.isRequired,
+  id: number.isRequired,
+  link: string.isRequired,
+  overview: string.isRequired,
+  photo: string.isRequired,
+  photoAlt: string.isRequired,
+  publishedDate: string.isRequired,
+  title: string.isRequired
+})
+
+
 StoryDetails.propTypes = {
-  currentStory: PropTypes.object.isRequired,
+  currentStory: article.isRequired,
   addFavorite: PropTypes.func.isRequired,
-  favorites: PropTypes.array.isRequired
+  favorites: arrayOf(article).isRequired
 };
