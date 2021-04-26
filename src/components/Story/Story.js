@@ -1,6 +1,7 @@
 import './Story.css';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const Story = ({ title, author, image, altText, publishedDate }) => {
 
@@ -16,3 +17,11 @@ const Story = ({ title, author, image, altText, publishedDate }) => {
 }
 
 export default Story;
+
+Story.propTypes = {
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  altText: PropTypes.string.isRequired,
+  publishedDate: PropTypes.string.isRequired
+};
