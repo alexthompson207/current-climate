@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/alexthompson207/current-climate.svg?branch=feature%2Fadd-travisCI)](https://travis-ci.com/alexthompson207/current-climate)
+
 <h1 align="left">Current Climate</h1>
 
 <p align="center">
