@@ -13,3 +13,5 @@ deploy:
   provider: heroku
   app: current-climate
   skip_cleanup: true
+on:
+    branch: main
